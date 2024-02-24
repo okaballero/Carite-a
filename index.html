@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appCarineta">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Cariñeta</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/ico.png" rel="icon">
+  <link href="assets/img/ico.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <!-- =======================================================
+  * Template Name: BizLand
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    #header .logo img {
+      max-height: 90px;
+    }
+  </style>
+</head>
+
+<body id="app" ng-controller="HomeCtrl">
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center row">
+        
+        <i class="bi bi-phone d-flex align-items-center ms-4 "><span>+52 5552 0324 46 </span></i>
+      </div>
+      <!--<div class="social-links d-none d-md-flex align-items-center" style="display:none">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>-->
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="/">
+        <img src="assets/img/logo.png" class="img-fluid">
+      </a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
+          
+          <li><a class="nav-link scrollto" href="#services">Servicios</a></li>
+          
+          
+          <li class="dropdown"><a href="#"><span>Productos</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li ng-repeat="service in services" > <a href="detalle.html?id={{ service.id }}">{{ service.title }}</a></li>              
+            </ul>
+          </li>
+
+          <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <h1>Bienvenido a <span>Cariñeta</span></h1>
+      <h2>Fabricación, Suministro e Instalación de Sistemas de Almacenamiento</h2>
+      <div class="d-flex">
+        <a href="#contact" class="btn-get-started scrollto">Contactanos</a>        
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services" style="display:none">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bx bxl-dribl"></i></div>
+              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4 class="title"><a href="">Magni Dolores</a></h4>
+              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4 class="title"><a href="">Nemo Enim</a></h4>
+              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Featured Services Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Acerca de nosotros</h2>
+          <h3>Saber más <span>Sobre nosotros</span></h3>
+          <p>Somos una empresa dedicada a la fabricación de sistemas de almacenamiento industrial y comercial. Manufacturados con aceros de la mas alta calidad, 
+          perfección en sus acabados y el control de calidad que nos permiten garantizarle un producto confiable, resistente y funcional para el ahorro de espacio 
+          y dinero de su bodega, elemental para el desarrollo y expansión de su negocio.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+            <img src="assets/img/rack/torres_06.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <h3>La Solución que le ahorrará espacio y dinero a su almacén.</h3>
+            
+            <ul>
+              <li>
+                <i class="bx bx-store-alt"></i>
+                <div>       
+                  <h5>Visión</h5>           
+                  <p>En Interflo Siendo Empresa Pionera En El Diseño, Fabricación Y Comercialización De Sistemas De Almacenaje Tenemos La Mejor Solución Para Tu Empresa.</p>
+                </div>
+              </li>
+              <li>
+                <i class="bx bx-images"></i>
+                <div>
+                  <h5>Misión</h5>
+                  <p>Ofrecer Las Mejores Soluciones De Almacenaje Al Sector Industrial, Mediante Sistemas Y/O Productos Que Superen Las Expectativas 
+                  De CALIDAD De Los Clientes En DISEÑO, FABRICACIÓN E INSTALACIÓN, Así Como Servicio Personalizado En La Pre-Venta Y Post-Venta.</p>
+                </div>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients section-bg">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="row">
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Clients Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services" style="display:none">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Servicios</h2>
+          <h3>Consulta nuestros <span>Servicios</span></h3>
+          
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" ng-repeat="service in services">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ service.img_service }}" class="card-img-top" alt="{{ service.title }}">
+                <div class="card-body">
+                  <h5 class="card-title"> {{ service.title }}</h5>
+                  <p class="card-text">{{ service.description }}</p>                
+                </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/clients/default.png" class="testimonial-img" alt="">
+                <h3>Saul Guajardo</h3>
+                
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  ¡Los sistemas de almacenamiento son increíblemente robustos! Han transformado mi bodega, brindando eficiencia y ahorro de espacio.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/clients/default.png" class="testimonial-img" alt="">
+                <h3>Sara Perez</h3>
+                
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  La calidad del acero es excepcional, y los acabados son impecables. Estos sistemas son esenciales para cualquier negocio que busque optimizar su espacio.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/clients/default.png" class="testimonial-img" alt="">
+                <h3>Adrian Carrillo</h3>
+                
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  ¡Altamente recomendados! La durabilidad de los productos y el control de calidad son evidentes. Han marcado la diferencia en la gestión de mi almacén.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/clients/default.png" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  La eficiencia operativa se ha disparado con estos sistemas de almacenamiento. Una inversión que ha mejorado notablemente la organización y el ahorro de dinero.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/clients/default.png" class="testimonial-img" alt="">
+                <h3>Estefania Cardenas</h3>
+                
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Estoy encantado con la atención al cliente y la resistencia de los productos. Han sido fundamentales para la expansión de mi negocio.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          
+          <h3>Nuestros  <span>Trabajos</span></h3>
+        </div>
+
+        
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/rack/torres_03.jpg" class="img-fluid" alt="">            
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/rack/torres_04.jpg" class="img-fluid" alt="">            
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/rack/torres_05.jpg" class="img-fluid" alt="">            
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/rack/torres_06.jpg" class="img-fluid" alt="">            
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/rack/torres_07.jpg" class="img-fluid" alt="">            
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/rack/torres_08.jpg" class="img-fluid" alt="">            
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/rack/torres_09.jpg" class="img-fluid" alt="">            
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/rack/torres_10.jpg" class="img-fluid" alt="">            
+          </div>
+
+
+          
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Portfolio Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contacto</h2>
+          <h3><span>Contactenos</span></h3>
+          <p>
+          ¡Optimice su espacio de almacenamiento con soluciones de calidad incomparable! Ofrecemos sistemas industriales y comerciales fabricados con aceros de primera calidad. 
+          Garantice la eficiencia, resistencia y funcionalidad para su bodega. ¡Contáctenos hoy para transformar su espacio y potenciar el desarrollo de su negocio!
+          </p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6">
+            <div class="info-box mb-4">
+              <i class="bx bx-map"></i>
+              <h3>Dirección</h3>
+              <p>Lago de Tequesquitengo #8. Col, Lago, Geovillas de Terranova, CP:, 55883 Méx.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-box  mb-4">
+              <i class="bx bx-envelope"></i>
+              <h3>Email </h3>
+              <p>contacto@carineta.store</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-box  mb-4">
+              <i class="bx bx-phone-call"></i>
+              <h3>Contactanos</h3>
+              <p>+52 5552 0324 46 </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-6 ">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3758.4774887398844!2d-98.97855892425743!3d19.606873835091186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f927089452b9%3A0x55aa8445c808a69e!2sSRS%20RACKS%20MEXICO!5e0!3m2!1ses!2smx!4v1708710835229!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div class="col-lg-6">
+            <div role="form" class="php-email-form">
+              <div class="row">
+                <div class="col form-group">
+                  <input type="text" name="name" class="form-control input_contact" id="name" placeholder="Nombre" required>
+                </div>
+                <div class="col form-group">
+                  <input type="email" class="form-control input_contact" name="email" id="email" placeholder="Email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control input_contact" name="subject" id="subject" placeholder="Asunto" required>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control input_contact" name="message" rows="5" placeholder="Mensaje" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit" onclick="send_message()">Enviar mensaje</button></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-12 col-md-12 footer-contact text-center">
+            <h3>Cariñeta<span>.</span></h3>
+            <p>
+              Lago de Tequesquitengo #8. 
+              Col, Lago, Geovillas de Terranova, 
+              CP:, 55883 Méx 
+              <br>
+              <strong>Phone:</strong> +52 5552 0324 46<br>
+              <strong>Email:</strong> contacto@carineta.store<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links" style="display:none">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links" style="display:none">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links" style="display:none">
+            <h4>Our Social Networks</h4>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span></span></strong>. Todos los derechos reservados
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
+        
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  
+  <script src="assets/js/main.js"></script>
+  
+  
+  <script src="assets/js/app/main.js"></script>
+
+  <script>
+    function send_message(){
+      toastr.success('Gracias a la brevedad ')
+      var inputsContact = document.querySelectorAll('.input_contact');
+
+      inputsContact.forEach(function(input) {
+        input.value = ''; // Esto vacía el valor del input
+      });
+    }
+  </script>
+</body>
+
+</html>
